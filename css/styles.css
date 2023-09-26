@@ -20,13 +20,18 @@ body	{
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.5;
-	background-color: #fff;
+	background-color: #222;
 	color: #222;
 }
 
 img	{
 	max-width: 100%;
 	height: auto;
+}
+
+*:focus	{
+	outline: 2px dashed	#1E90FF;
+	outline-offset: 2px;
 }
 
 
@@ -143,6 +148,7 @@ only screen and (                min-resolution: 2dppx) {
 	padding: 54px;
 	width: 100%;
 	max-width: 600px;
+	background-color: #fff;
 }
 
 .latest-videos-heading {
@@ -203,6 +209,7 @@ margin-bottom: 10px;
 }
 
 .item-latest-videos-link {
+	display: inline-block;
 	color: #222;
 	text-decoration: none;
 }
@@ -223,35 +230,52 @@ color:#1E90FF;
 	line-height: normal;
 }
 
-.item-latest-videos-published-at {
-	display: flex;
-	align-items: center;
+.item-latest-videos-meta-item	{
+display: flex;
+align-items: center;
+}
+
+.item-latest-videos-meta-item:not(:last-child)	{
 	margin-right: 24px;
 }
 
-.item-latest-videos-published-at::before	{
+.item-latest-videos-meta-item::before	{
 	width: 16px;
 	height: 16px;
 	margin-right: 4px;
-	background-image: url(../img/soat.svg);
-	background-repeat: no-repeat;
-	background-position: center	center;
+	background-repeat:no-repeat;
 	background-size: contain;
+	background-position: center	center;
 	content: "";
 }
 
-.item-latest-video-views {
-	display: flex;
-	align-items: center;
+.item-latest-videos-meta-item-published-at::before	{
+background-image: url("../img/soat.svg");
 }
 
-.item-latest-video-views::before	{
-	width: 16px;
-	height: 16px;
-	margin-right: 4px;
-	background-image: url(../img/koz.svg);
-	background-repeat: no-repeat;
-	background-position: center	center;
-	background-size: contain;
- contain: "";
+.item-latest-videos-meta-item-published-views::before	{
+	background-image: url("../img/koz.svg");
+}
+
+/* BUTTON */
+.load-more-button	{
+	display: block;
+	width: 100%;
+	padding: 12px;
+	border: 0;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: normal;
+	background-color: #1E90FFCC;
+	color: #fff;
+	cursor: pointer;
+}
+
+.load-more-button:hover	{
+	background-color: rgba(30, 144, 255, 0.80);
+}
+
+.load-more-button:active	{
+	background-color: rgba(30, 144, 255, 0.6);
 }
